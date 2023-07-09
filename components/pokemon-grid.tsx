@@ -22,6 +22,7 @@ export function PokemonGrid() {
             placeholder="Pokemon Name"
             value={searchText}
             onChange={searchPokemon}
+            autoComplete="off"
           />
         </div>
       </div>
