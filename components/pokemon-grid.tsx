@@ -25,9 +25,10 @@ export function PokemonGrid() {
             autoComplete="off"
           />
         </div>
+        <h3 className="">Pokemon collection</h3>
       </div>
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-      <PokemonCard />
+      <div className="grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
+      <PokemonCard name="pikachu" />
     </div>
     </>
   );
