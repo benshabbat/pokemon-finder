@@ -1,5 +1,5 @@
 "use client";
-
+import PokemonCard from "@/components/pokemon-card";
 import { useState } from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
@@ -26,6 +26,9 @@ export function PokemonGrid() {
           />
         </div>
       </div>
+      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
+      <PokemonCard />
+    </div>
     </>
   );
 }
