@@ -4,12 +4,16 @@ import { useState } from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 
-export function PokemonGrid() {
+interface PokemonGridProps {
+  pokemonList: any;
+}
+export function PokemonGrid({ pokemonList }: PokemonGridProps) {
   const [searchText, setSearchText] = useState();
-  const searchPokemon = (e:any) => {
+  const searchPokemon = (e: any) => {
     const { value } = e.target;
     setSearchText(value);
   };
+
   return (
     <>
       <div>
@@ -28,10 +32,10 @@ export function PokemonGrid() {
         <h3 className="text-3xl pt-12 pb-8 text-center">Pokemon collection</h3>
       </div>
       <div className="grid text-center lg:mb-0 lg:grid-cols-3 lg:text-left">
-      <PokemonCard name="pikachu" />
-      <PokemonCard name="pikachu" />
-      <PokemonCard name="pikachu" />
-    </div>
+        {pokemonList.map((pokemon: any) => {
+          return <PokemonCard name={pokemon?.name} key={pokemon?.name} />;
+        })}
+      </div>
     </>
   );
 }
