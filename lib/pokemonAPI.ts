@@ -5,3 +5,8 @@ export async function getPokemonList() {
   const data = await response.json();
   return data.results;
 }
+export async function getPokemonListLimit(limit:number) {
+  const response = await fetch(POKEMON_API + `pokemon?limit=${limit}&offset=0`);
+  const data = await response.json();
+  return data.results;
+}
