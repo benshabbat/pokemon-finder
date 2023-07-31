@@ -1,6 +1,5 @@
 import { getPokemon } from "@/lib/pokemonAPI";
-import Image from "next/image";
-
+import PokemonImage from "@/components/pokemon-image";
 export default async function PokemonPage({
   params,
 }: {
@@ -8,17 +7,15 @@ export default async function PokemonPage({
 }) {
   const { pokemonName } = params;
   const pokemonObject = await getPokemon(pokemonName);
-  console.log(pokemonObject)
+  console.log(pokemonObject);
   return (
     <>
       <h1 className="text-4xl text-bold pt-4">
         {pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1)}
       </h1>
-      <Image
-        src={pokemonObject.sprites.other['official-artwork'].front_default }
-        width={200}
-        height={200}
-        alt={`picture of ${pokemonName}`}
+      <PokemonImage
+        image={pokemonObject.sprites.other["official-artwork"].front_default}
+        name={pokemonName}
       />
     </>
   );

@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-const pokemonImage = ({image,name}:{image:string,name:string}) => {
+const PokemonImage = ({image,name}:{image:string,name:string}) => {
   return (
     <Image
     src={image }
@@ -14,4 +14,4 @@ const pokemonImage = ({image,name}:{image:string,name:string}) => {
   )
 }
 
-export default pokemonImage
+export default PokemonImage
