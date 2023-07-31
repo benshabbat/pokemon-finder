@@ -1,17 +1,20 @@
-"use client"
+"use client";
 
-import Image from 'next/image'
-import React from 'react'
+import Image from "next/image";
+import React from "react";
 
-const PokemonImage = ({image,name}:{image:string,name:string}) => {
+const PokemonImage = ({ image, name }: { image: string; name: string }) => {
   return (
     <Image
-    src={image }
-    width={200}
-    height={200}
-    alt={`picture of ${name}`}
-  />
-  )
-}
+      src={image}
+      priority
+      fill
+      style={{ objectFit: "contain" }}
+      className="transition-opacity opacity-0 duration-[2s]"
+      onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+      alt={`picture of ${name}`}
+    />
+  );
+};
 
-export default PokemonImage
+export default PokemonImage;
