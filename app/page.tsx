@@ -1,5 +1,4 @@
-import { PokemonGrid } from "@/components/pokemon-grid";
-import Image from "next/image";
+import { PokemonGrid } from "@/components/pokemon-grid";next build
 import { getPokemonListLimit } from "@/lib/pokemonAPI";
 export default async function Home() {
   // const pokemonList = await getPokemonList();
